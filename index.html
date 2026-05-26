@@ -1,558 +1,780 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-<title>Vishnu Jangid | Senior Appian Developer</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Varela+Round&display=swap" rel="stylesheet">
-
-<style>
-
-:root {
-  --bg: #0c0c0c;
-  --surface: #121212;
-  --border: #262626;
-  --text: #e8e8e8;
-  --muted: #a3a3a3;
-  --accent: #e8d5b0;
-  --accent-dim: #7a6a50;
-
-  --font-heading: 'Varela Round', sans-serif;
-  --font-body: 'Inter', sans-serif;
-}
-
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-section{
-  scroll-margin-top:80px;
-}
-
-body{
-  background:var(--bg);
-  color:var(--text);
-  font-family:var(--font-body);
-  overflow-x:hidden;
-}
-
-/* ---------------- NAVBAR ---------------- */
-
-.site-nav{
-  position:fixed;
-  top:0;
-  width:100%;
-  padding:20px 6%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  z-index:1000;
-
-  background:rgba(12,12,12,0.92);
-  backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--border);
-}
-
-.logo{
-  font-size:1.6rem;
-  font-family:var(--font-heading);
-  text-decoration:none;
-  color:var(--text);
-}
-
-.logo span{
-  color:var(--accent);
-}
-
-.nav-links{
-  display:flex;
-  gap:30px;
-  align-items:center;
-}
-
-.nav-links a{
-  text-decoration:none;
-  color:var(--text);
-  transition:0.3s;
-}
-
-.nav-links a:hover{
-  color:var(--accent);
-}
-
-/* ---------------- HERO SECTION ---------------- */
-
-.hero{
-  min-height:100vh;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:120px 8% 60px;
-  gap:60px;
-  position:relative;
-}
-
-.hero-content{
-  flex:1;
-}
-
-.hero-content h1{
-  font-size:4rem;
-  line-height:1.1;
-  margin-bottom:20px;
-  font-family:var(--font-heading);
-}
-
-.hero-content h1 span{
-  color:var(--accent);
-}
-
-.hero-content p{
-  color:var(--muted);
-  font-size:1.1rem;
-  line-height:1.8;
-  max-width:650px;
-}
-
-.hero-buttons{
-  margin-top:35px;
-  display:flex;
-  gap:20px;
-}
-
-.hero-btn{
-  padding:14px 24px;
-  border-radius:10px;
-  text-decoration:none;
-  transition:0.3s;
-  font-weight:600;
-}
-
-.primary-btn{
-  background:var(--accent);
-  color:var(--bg);
-}
-
-.primary-btn:hover{
-  transform:translateY(-3px);
-}
-
-.secondary-btn{
-  border:1px solid var(--border);
-  color:var(--text);
-}
-
-.secondary-btn:hover{
-  border-color:var(--accent);
-  color:var(--accent);
-}
-
-.avatar-container{
-  flex-shrink:0;
-}
-
-.avatar{
-  width:360px;
-  border-radius:30px;
-  animation:float 4s ease-in-out infinite;
-  box-shadow:0 20px 40px rgba(0,0,0,0.5);
-}
-
-/* ---------------- MAIN CONTENT ---------------- */
-
-.layout-grid{
-  max-width:1200px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:2fr 1fr;
-  gap:60px;
-  padding:40px 6% 100px;
-}
-
-.section-title{
-  color:var(--accent);
-  font-size:0.9rem;
-  text-transform:uppercase;
-  letter-spacing:2px;
-  margin-bottom:25px;
-}
-
-.article-card{
-  background:var(--surface);
-  border:1px solid var(--border);
-  padding:30px;
-  border-radius:18px;
-  margin-bottom:25px;
-  transition:0.3s;
-}
-
-.article-card:hover{
-  border-color:var(--accent-dim);
-  transform:translateY(-5px);
-}
-
-.article-card h3{
-  margin-bottom:10px;
-  font-size:1.4rem;
-}
-
-.meta{
-  color:var(--muted);
-  font-size:0.9rem;
-  margin-bottom:20px;
-}
-
-.article-card p{
-  color:var(--muted);
-  line-height:1.8;
-}
-
-.article-card ul{
-  margin-top:20px;
-  padding-left:20px;
-}
-
-.article-card li{
-  margin-bottom:10px;
-  color:var(--muted);
-}
-
-/* ---------------- SIDEBAR ---------------- */
-
-.sidebar-section{
-  margin-bottom:40px;
-}
-
-.pill-container{
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
-}
-
-.pill{
-  background:var(--surface);
-  border:1px solid var(--border);
-  padding:10px 16px;
-  border-radius:10px;
-  font-size:0.9rem;
-  transition:0.3s;
-}
-
-.pill:hover{
-  border-color:var(--accent);
-  color:var(--accent);
-}
-
-.cert-card{
-  background:var(--surface);
-  border:1px solid var(--border);
-  padding:20px;
-  border-radius:15px;
-  margin-bottom:15px;
-}
-
-.cert-card h4{
-  margin-bottom:6px;
-}
-
-.cert-card span{
-  color:var(--muted);
-  font-size:0.9rem;
-}
-
-/* ---------------- CONTACT ---------------- */
-
-.contact-card{
-  background:var(--surface);
-  border:1px solid var(--border);
-  border-radius:16px;
-  padding:25px;
-}
-
-.contact-item{
-  margin-bottom:18px;
-}
-
-.contact-item a{
-  color:var(--text);
-  text-decoration:none;
-}
-
-.contact-item a:hover{
-  color:var(--accent);
-}
-
-/* ---------------- ANIMATION ---------------- */
-
-@keyframes float{
-  0%{
-    transform:translateY(0px);
-  }
-  50%{
-    transform:translateY(-15px);
-  }
-  100%{
-    transform:translateY(0px);
-  }
-}
-
-/* ---------------- RESPONSIVE ---------------- */
-
-@media(max-width:950px){
-
-  .hero{
-    flex-direction:column;
-    text-align:center;
-  }
-
-  .layout-grid{
-    grid-template-columns:1fr;
-  }
-
-  .hero-buttons{
-    justify-content:center;
-  }
-
-  .avatar{
-    width:280px;
-  }
-
-}
-
-@media(max-width:700px){
-
-  .nav-links{
-    display:none;
-  }
-
-  .hero-content h1{
-    font-size:2.8rem;
-  }
-
-}
-
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Vishnu Jangid | Senior Appian Developer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Varela+Round&display=swap" rel="stylesheet">
+
+  <style>
+
+    :root{
+      --bg:#0c0c0c;
+      --surface:#121212;
+      --surface2:#171717;
+      --border:#262626;
+      --text:#e8e8e8;
+      --muted:#a3a3a3;
+      --accent:#e8d5b0;
+      --accent-dim:#7a6a50;
+
+      --font-heading:'Varela Round', sans-serif;
+      --font-body:'Inter', sans-serif;
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+      scroll-padding-top:100px;
+    }
+
+    body{
+      background:var(--bg);
+      color:var(--text);
+      font-family:var(--font-body);
+      overflow-x:hidden;
+      line-height:1.7;
+    }
+
+    section{
+      scroll-margin-top:100px;
+    }
+
+    a{
+      text-decoration:none;
+    }
+
+    /* ================= NAVBAR ================= */
+
+    .navbar{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      padding:22px 7%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      z-index:1000;
+
+      background:rgba(12,12,12,0.88);
+      backdrop-filter:blur(12px);
+
+      border-bottom:1px solid var(--border);
+    }
+
+    .logo{
+      color:var(--text);
+      font-size:1.7rem;
+      font-family:var(--font-heading);
+      font-weight:600;
+    }
+
+    .logo span{
+      color:var(--accent);
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:34px;
+    }
+
+    .nav-links a{
+      color:var(--text);
+      transition:0.3s;
+      font-size:0.95rem;
+    }
+
+    .nav-links a:hover{
+      color:var(--accent);
+    }
+
+    .resume-btn{
+      border:1px solid var(--accent);
+      padding:12px 20px;
+      border-radius:10px;
+      color:var(--accent) !important;
+      transition:0.3s;
+    }
+
+    .resume-btn:hover{
+      background:var(--accent);
+      color:var(--bg) !important;
+    }
+
+    /* ================= HERO ================= */
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:150px 7% 80px;
+      gap:80px;
+      position:relative;
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      width:500px;
+      height:500px;
+      background:radial-gradient(circle, rgba(232,213,176,0.08), transparent 70%);
+      right:10%;
+      top:50%;
+      transform:translateY(-50%);
+      z-index:-1;
+    }
+
+    .hero-content{
+      flex:1;
+    }
+
+    .eyebrow{
+      color:var(--accent);
+      font-size:0.95rem;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      margin-bottom:20px;
+      font-weight:600;
+    }
+
+    .hero-content h1{
+      font-size:5rem;
+      line-height:1.05;
+      margin-bottom:20px;
+      font-family:var(--font-heading);
+    }
+
+    .hero-content h2{
+      color:var(--accent);
+      font-size:2rem;
+      margin-bottom:28px;
+      font-weight:600;
+    }
+
+    .hero-content p{
+      color:var(--muted);
+      max-width:700px;
+      font-size:1.08rem;
+    }
+
+    .hero-buttons{
+      margin-top:40px;
+      display:flex;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      padding:15px 26px;
+      border-radius:12px;
+      transition:0.3s;
+      font-weight:600;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .btn-primary{
+      background:var(--accent);
+      color:var(--bg);
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-4px);
+    }
+
+    .btn-secondary{
+      border:1px solid var(--border);
+      color:var(--text);
+    }
+
+    .btn-secondary:hover{
+      border-color:var(--accent);
+      color:var(--accent);
+    }
+
+    .social-links{
+      display:flex;
+      gap:14px;
+      margin-top:30px;
+    }
+
+    .social-box{
+      width:52px;
+      height:52px;
+      border-radius:12px;
+      background:var(--surface);
+      border:1px solid var(--border);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:var(--accent);
+      font-size:1.1rem;
+      transition:0.3s;
+    }
+
+    .social-box:hover{
+      transform:translateY(-4px);
+      border-color:var(--accent);
+    }
+
+    /* ================= AVATAR ================= */
+
+    .hero-image{
+      flex-shrink:0;
+    }
+
+    .avatar{
+      width:520px;
+      max-width:100%;
+      object-fit:contain;
+      animation:float 4s ease-in-out infinite;
+      filter:drop-shadow(0 30px 50px rgba(0,0,0,0.65));
+      background:transparent;
+    }
+
+    /* ================= CONTENT ================= */
+
+    .container{
+      width:min(1300px, 92%);
+      margin:auto;
+      padding-bottom:100px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:2fr 1fr;
+      gap:40px;
+    }
+
+    .card{
+      background:linear-gradient(
+        180deg,
+        rgba(255,255,255,0.02),
+        rgba(255,255,255,0.01)
+      );
+
+      border:1px solid var(--border);
+      border-radius:24px;
+      padding:34px;
+      margin-bottom:28px;
+      transition:0.35s;
+    }
+
+    .card:hover{
+      border-color:var(--accent-dim);
+      transform:translateY(-4px);
+    }
+
+    .section-heading{
+      color:var(--accent);
+      font-size:1.15rem;
+      margin-bottom:28px;
+      text-transform:uppercase;
+      letter-spacing:1px;
+      font-weight:700;
+    }
+
+    .timeline-item{
+      position:relative;
+      padding-left:28px;
+      margin-bottom:35px;
+    }
+
+    .timeline-item::before{
+      content:"";
+      position:absolute;
+      left:0;
+      top:8px;
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      background:var(--accent);
+    }
+
+    .timeline-item h3{
+      font-size:1.45rem;
+      margin-bottom:8px;
+    }
+
+    .timeline-meta{
+      color:var(--accent);
+      font-size:0.95rem;
+      margin-bottom:15px;
+      font-weight:600;
+    }
+
+    .timeline-item p,
+    .timeline-item li{
+      color:var(--muted);
+    }
+
+    .timeline-item ul{
+      margin-top:15px;
+      padding-left:20px;
+    }
+
+    .timeline-item li{
+      margin-bottom:10px;
+    }
+
+    /* ================= SKILLS ================= */
+
+    .skills-grid{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+    }
+
+    .skill-pill{
+      padding:12px 18px;
+      border-radius:12px;
+      background:var(--surface2);
+      border:1px solid var(--border);
+      color:var(--text);
+      transition:0.3s;
+      font-size:0.95rem;
+    }
+
+    .skill-pill:hover{
+      border-color:var(--accent);
+      color:var(--accent);
+      transform:translateY(-3px);
+    }
+
+    /* ================= CERTIFICATIONS ================= */
+
+    .cert-box{
+      background:var(--surface2);
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:20px;
+      margin-bottom:16px;
+      transition:0.3s;
+    }
+
+    .cert-box:hover{
+      border-color:var(--accent);
+    }
+
+    .cert-box h4{
+      margin-bottom:6px;
+      font-size:1.1rem;
+    }
+
+    .cert-box p{
+      color:var(--muted);
+      font-size:0.95rem;
+    }
+
+    /* ================= CONTACT ================= */
+
+    .contact-item{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      margin-bottom:22px;
+      color:var(--muted);
+    }
+
+    .contact-item a{
+      color:var(--text);
+    }
+
+    .contact-item a:hover{
+      color:var(--accent);
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer{
+      border-top:1px solid var(--border);
+      text-align:center;
+      padding:30px;
+      color:var(--muted);
+      font-size:0.95rem;
+    }
+
+    /* ================= ANIMATION ================= */
+
+    @keyframes float{
+      0%{
+        transform:translateY(0px);
+      }
+      50%{
+        transform:translateY(-16px);
+      }
+      100%{
+        transform:translateY(0px);
+      }
+    }
+
+    /* ================= RESPONSIVE ================= */
+
+    @media(max-width:1100px){
+
+      .hero{
+        flex-direction:column;
+        text-align:center;
+        padding-top:140px;
+      }
+
+      .hero-buttons{
+        justify-content:center;
+      }
+
+      .social-links{
+        justify-content:center;
+      }
+
+      .grid{
+        grid-template-columns:1fr;
+      }
+
+    }
+
+    @media(max-width:760px){
+
+      .nav-links{
+        display:none;
+      }
+
+      .hero-content h1{
+        font-size:3.3rem;
+      }
+
+      .hero-content h2{
+        font-size:1.6rem;
+      }
+
+      .avatar{
+        width:340px;
+      }
+
+      .card{
+        padding:24px;
+      }
+
+    }
+
+  </style>
+
 </head>
 
 <body>
 
-<header class="site-nav">
+  <!-- ================= NAVBAR ================= -->
 
-  <a href="#" class="logo">
-    Vishnu <span>Jangid</span>
-  </a>
+  <header class="navbar">
 
-  <nav class="nav-links">
-    <a href="#experience">Experience</a>
-    <a href="#projects">Projects</a>
-    <a href="#skills">Skills</a>
-  </nav>
+    <a href="#" class="logo">
+      Vishnu <span>Jangid</span>
+    </a>
 
-</header>
+    <nav class="nav-links">
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
 
-<section class="hero">
+  </header>
 
-  <div class="hero-content">
+  <!-- ================= HERO ================= -->
 
-    <h1>
-      Senior <span>Appian</span><br>
-      Developer
-    </h1>
+  <section class="hero">
 
-    <p>
-      I build scalable workflow automation solutions using Appian.
-      With 4.4+ years of experience, I specialize in SAIL interfaces,
-      process modeling, Web APIs, database integrations, and enterprise
-      digital transformation projects.
-    </p>
+    <div class="hero-content">
 
-    <div class="hero-buttons">
+      <div class="eyebrow">
+        HELLO, I'M
+      </div>
 
-      <a href="#projects" class="hero-btn primary-btn">
-        View Projects
-      </a>
+      <h1>
+        Vishnu Jangid
+      </h1>
 
-      <a href="#contact" class="hero-btn secondary-btn">
-        Contact Me
-      </a>
+      <h2>
+        Senior Appian Developer
+      </h2>
+
+      <p>
+        Appian Developer with 4.6 years of experience in designing,
+        developing, and deploying scalable solutions on the Appian BPM platform.
+        Specialized in SAIL interface development, process modeling,
+        Web API integrations, workflow automation, and enterprise digital services.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a href="#projects" class="btn btn-primary">
+          View Projects →
+        </a>
+
+        <a href="#contact" class="btn btn-secondary">
+          Contact Me
+        </a>
+
+      </div>
+
+      <div class="social-links">
+
+        <a href="https://www.linkedin.com/in/vishnu-jangid-a8001a119/" class="social-box">in</a>
+        <a href="mailto:vishnujangid256@gmail.com" class="social-box">@</a>
+
+      </div>
 
     </div>
 
-  </div>
+    <div class="hero-image">
 
-  <div class="avatar-container">
-
-    <img
+      <!-- SAVE YOUR IMAGE AS avatar.png -->
+     <img
       src="https://png.pngtree.com/png-vector/20251204/ourlarge/pngtree-software-developer-emoji-illustration-mood-style-white-background-png-image_18133912.webp"
       class="avatar"
       alt="Developer Avatar"
     />
 
-  </div>
+    </div>
 
-</section>
+  </section>
 
-<main class="layout-grid">
+  <!-- ================= MAIN CONTENT ================= -->
 
-  <div>
+  <main class="container">
 
-    <section id="experience">
+    <div class="grid">
 
-      <h2 class="section-title">
-        Work Experience
-      </h2>
+      <!-- LEFT SIDE -->
 
-      <div class="article-card">
+      <div>
 
-        <h3>Senior Appian Developer</h3>
+        <!-- EXPERIENCE -->
 
-        <div class="meta">
-          Xebia Appcino • 2021 - Present
-        </div>
+        <section id="experience" class="card">
 
-        <p>
-          Leading Appian development across enterprise workflow,
-          automation, reporting, and integration projects.
-        </p>
+          <h2 class="section-heading">
+            Experience
+          </h2>
 
-        <ul>
-          <li>Designed reusable SAIL interfaces</li>
-          <li>Implemented secure Web API integrations</li>
-          <li>Developed process models and reporting dashboards</li>
-          <li>Worked directly with client stakeholders</li>
-        </ul>
+          <div class="timeline-item">
 
-      </div>
+            <h3>Senior Appian Developer</h3>
 
-    </section>
+            <div class="timeline-meta">
+              Xebia | Appcino • Oct 2021 – Present
+            </div>
 
-    <section id="projects">
+            <ul>
+              <li>Designed and implemented complex workflows and reusable SAIL interfaces.</li>
+              <li>Integrated Appian applications with external systems using secure Web APIs.</li>
+              <li>Worked on enterprise workflow automation and scalable digital solutions.</li>
+              <li>Optimized performance, security, and architecture using Appian best practices.</li>
+              <li>Collaborated with Middle East client stakeholders for citizen-facing applications.</li>
+            </ul>
 
-      <h2 class="section-title">
-        Featured Projects
-      </h2>
+          </div>
 
-      <div class="article-card">
+        </section>
 
-        <h3>Enterprise Workflow Platform</h3>
+        <!-- PROJECTS -->
 
-        <div class="meta">
-          2025 - Present
-        </div>
+        <section id="projects" class="card">
 
-        <ul>
-          <li>Developed enterprise workflow automation</li>
-          <li>Created audit trail reporting solutions</li>
-          <li>Integrated Appian with databases & APIs</li>
-        </ul>
+          <h2 class="section-heading">
+            Projects
+          </h2>
 
-      </div>
+          <div class="timeline-item">
 
-      <div class="article-card">
+            <h3>Enterprise Workflow & Reporting Platform</h3>
 
-        <h3>Medical Affairs Platform</h3>
+            <div class="timeline-meta">
+              Jan 2026 – Present
+            </div>
 
-        <div class="meta">
-          2024 - 2025
-        </div>
+            <ul>
+              <li>Developed enterprise applications using Appian low-code platform.</li>
+              <li>Designed SAIL interfaces, process models, and record types.</li>
+              <li>Implemented reporting dashboards and audit trail mechanisms.</li>
+              <li>Used database triggers for activity tracking and compliance reporting.</li>
+            </ul>
 
-        <ul>
-          <li>Implemented approval workflows</li>
-          <li>Built dashboards & RBAC solutions</li>
-          <li>Managed automation processes</li>
-        </ul>
+          </div>
 
-      </div>
+          <div class="timeline-item">
 
-    </section>
+            <h3>Medical Affairs & Drug Management Platform</h3>
 
-  </div>
+            <div class="timeline-meta">
+              Jul 2025 – Dec 2025
+            </div>
 
-  <aside>
+            <ul>
+              <li>Implemented workflows for drug approvals and medical reviews.</li>
+              <li>Built request intake and multi-level approval automation.</li>
+              <li>Integrated healthcare systems for drug validation.</li>
+              <li>Enhanced compliance with RBAC and audit trails.</li>
+            </ul>
 
-    <section id="skills" class="sidebar-section">
+          </div>
 
-      <h2 class="section-title">
-        Skills
-      </h2>
+          <div class="timeline-item">
 
-      <div class="pill-container">
+            <h3>E-Services Portal (Government - Middle East)</h3>
 
-        <div class="pill">Appian BPM</div>
-        <div class="pill">SAIL</div>
-        <div class="pill">Web APIs</div>
-        <div class="pill">MySQL</div>
-        <div class="pill">Oracle</div>
-        <div class="pill">React</div>
-        <div class="pill">RBAC</div>
-        <div class="pill">Process Models</div>
+            <div class="timeline-meta">
+              Oct 2023 – Jun 2025
+            </div>
 
-      </div>
+            <ul>
+              <li>Built citizen-facing digital services platform.</li>
+              <li>Implemented secure API integrations and reusable interfaces.</li>
+              <li>Supported tourism, scholarships, and social development services.</li>
+            </ul>
 
-    </section>
+          </div>
 
-    <section class="sidebar-section">
+          <div class="timeline-item">
 
-      <h2 class="section-title">
-        Certifications
-      </h2>
+            <h3>Government Licensing Platform</h3>
 
-      <div class="cert-card">
-        <h4>Appian Level 2</h4>
-        <span>Senior Developer</span>
-      </div>
+            <div class="timeline-meta">
+              Apr 2022 – Sep 2023
+            </div>
 
-      <div class="cert-card">
-        <h4>Appian Level 1</h4>
-        <span>Associate Developer</span>
-      </div>
+            <ul>
+              <li>Developed licensing workflows for social workers.</li>
+              <li>Implemented slot booking, exams, and virtual interviews.</li>
+              <li>Reduced manual operations through automation.</li>
+            </ul>
 
-    </section>
+          </div>
 
-    <section id="contact">
-
-      <h2 class="section-title">
-        Contact
-      </h2>
-
-      <div class="contact-card">
-
-        <div class="contact-item">
-          📧
-          <a href="mailto:vishnujangid256@gmail.com">
-            vishnujangid256@gmail.com
-          </a>
-        </div>
-
-        <div class="contact-item">
-          📱
-          <a href="tel:7357576924">
-            7357576924
-          </a>
-        </div>
-
-        <div class="contact-item">
-          📍 Jaipur, Rajasthan
-        </div>
+        </section>
 
       </div>
 
-    </section>
+      <!-- RIGHT SIDE -->
 
-  </aside>
+      <aside>
 
-</main>
+        <!-- SKILLS -->
+
+        <section id="skills" class="card">
+
+          <h2 class="section-heading">
+            Skills
+          </h2>
+
+          <div class="skills-grid">
+
+            <div class="skill-pill">Appian BPM</div>
+            <div class="skill-pill">SAIL</div>
+            <div class="skill-pill">Web APIs</div>
+            <div class="skill-pill">MySQL</div>
+            <div class="skill-pill">Oracle</div>
+            <div class="skill-pill">Process Models</div>
+            <div class="skill-pill">RBAC</div>
+            <div class="skill-pill">Workflow Automation</div>
+            <div class="skill-pill">Reporting</div>
+            <div class="skill-pill">Database Triggers</div>
+
+          </div>
+
+        </section>
+
+        <!-- EDUCATION -->
+
+        <section class="card">
+
+          <h2 class="section-heading">
+            Education
+          </h2>
+
+          <div class="timeline-item">
+
+            <h3>Bachelor of Computer Application</h3>
+
+            <div class="timeline-meta">
+              JECRC University • 2019 – 2022
+            </div>
+
+          </div>
+
+        </section>
+
+        <!-- CERTIFICATIONS -->
+
+        <section class="card">
+
+          <h2 class="section-heading">
+            Certifications
+          </h2>
+
+          <div class="cert-box">
+            <h4>Appian Level 2 Certified</h4>
+            <p>Senior Developer Certification</p>
+          </div>
+
+          <div class="cert-box">
+            <h4>Appian Level 1 Certified</h4>
+            <p>Associate Developer Certification</p>
+          </div>
+
+        </section>
+
+        <!-- CONTACT -->
+
+        <section id="contact" class="card">
+
+          <h2 class="section-heading">
+            Contact
+          </h2>
+
+          <div class="contact-item">
+            📧
+            <a href="mailto:vishnujangid256@gmail.com">
+              vishnujangid256@gmail.com
+            </a>
+          </div>
+
+          <div class="contact-item">
+            📱
+            <a href="tel:7357576924">
+              7357576924
+            </a>
+          </div>
+
+          <div class="contact-item">
+            📍 Jaipur, Rajasthan, India
+          </div>
+
+        </section>
+
+      </aside>
+
+    </div>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer>
+    © 2026 Vishnu Jangid. All Rights Reserved.
+  </footer>
 
 </body>
 </html>
