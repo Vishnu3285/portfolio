@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Senior Appian Developer with 4.4 years building BPM solutions at scale."/>
+<title>Vishnu Jangid — Senior Appian Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,600;1,400&family=Geist:wght@300;400;500&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --bg:#0c0c0c;
+  --surface:#141414;
+  --border:#222;
+  --text:#e8e8e8;
+  --muted:#666;
+  --subtle:#999;
+  --accent:#e8d5b0;
+  --accent-dim:#7a6a50;
+  --blue:#4d9de0;
+  --green:#3fb97a;
+  --purple:#9b72cf;
+  --red:#e07a5f;
+}
+
+html{scroll-behavior:smooth}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Geist',sans-serif;
+  font-size:16px;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ── NAV ── */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:99;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 3rem;height:60px;
+  background:rgba(12,12,12,0.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+}
+.logo{
+  font-family:'Lora',serif;font-size:1.1rem;font-weight:600;
+  color:var(--accent);text-decoration:none;letter-spacing:-.01em;
+}
+nav{display:flex;gap:2.5rem;align-items:center}
+nav a{
+  font-size:13px;color:var(--muted);text-decoration:none;
+  letter-spacing:.04em;transition:color .2s;
+}
+nav a:hover{color:var(--text)}
+nav a.active{color:var(--text)}
+
+/* ── PAGE WRAP ── */
+.page{
+  max-width:780px;
+  margin:0 auto;
+  padding:120px 2rem 6rem;
+}
+
+/* ── SECTION EYEBROW ── */
+.eyebrow{
+  font-family:'Geist Mono',monospace;
+  font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:1.25rem;
+}
+
+/* ── HERO HEADING ── */
+.hero-heading{
+  font-family:'Lora',serif;
+  font-size:clamp(2.4rem,5vw,3.5rem);
+  font-weight:600;line-height:1.15;
+  margin-bottom:1.5rem;
+  letter-spacing:-.02em;
+}
+.hero-heading em{font-style:italic;font-weight:400;color:var(--accent)}
+.hero-sub{
+  font-size:16px;color:var(--subtle);
+  max-width:520px;line-height:1.8;margin-bottom:3rem;
+}
+
+/* ── DIVIDER ── */
+.rule{border:none;border-top:1px solid var(--border);margin:3.5rem 0}
+
+/* ── SECTION TITLE ── */
+.section-title{
+  font-family:'Lora',serif;font-size:1.3rem;font-weight:600;
+  letter-spacing:-.01em;margin-bottom:2.5rem;color:var(--text);
+}
+.section-title em{font-style:italic;font-weight:400;color:var(--accent)}
+
+/* ── JOB ENTRY ── */
+.job{margin-bottom:3.5rem}
+.job-header{
+  display:grid;grid-template-columns:1fr auto;
+  gap:.5rem 1.5rem;align-items:start;
+  margin-bottom:.2rem;
+}
+.job-role{
+  font-size:1.05rem;font-weight:500;color:var(--text);line-height:1.3;
+}
+.job-period{
+  font-family:'Geist Mono',monospace;font-size:12px;
+  color:var(--muted);white-space:nowrap;padding-top:3px;
+}
+.job-company{
+  font-size:14px;color:var(--subtle);margin-bottom:1rem;
+}
+.job-desc{
+  font-size:15px;color:var(--subtle);line-height:1.8;margin-bottom:1.25rem;
+}
+.job-bullets{list-style:none;padding:0;margin-bottom:1.25rem}
+.job-bullets li{
+  font-size:14px;color:var(--muted);line-height:1.7;
+  padding:4px 0 4px 1.4rem;position:relative;
+  border-top:1px solid var(--border);
+}
+.job-bullets li:last-child{border-bottom:1px solid var(--border)}
+.job-bullets li::before{
+  content:'→';position:absolute;left:0;color:var(--accent-dim);font-size:12px;top:6px;
+}
+
+/* ── TECH TAGS ── */
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:1rem}
+.tag{
+  font-family:'Geist Mono',monospace;
+  font-size:11px;padding:3px 9px;border-radius:3px;
+  background:#1a1a1a;border:1px solid var(--border);
+  color:var(--muted);letter-spacing:.02em;transition:border-color .2s,color .2s;
+}
+.tag:hover{border-color:var(--accent-dim);color:var(--accent)}
+
+/* type pills */
+.pill{
+  display:inline-block;font-family:'Geist Mono',monospace;
+  font-size:10px;letter-spacing:.08em;text-transform:uppercase;
+  padding:2px 8px;border-radius:2px;font-weight:500;margin-bottom:.6rem;
+}
+.pill-gov{background:rgba(77,157,224,.12);color:#4d9de0;border:1px solid rgba(77,157,224,.2)}
+.pill-ent{background:rgba(155,114,207,.12);color:#9b72cf;border:1px solid rgba(155,114,207,.2)}
+.pill-med{background:rgba(63,185,122,.12);color:#3fb97a;border:1px solid rgba(63,185,122,.2)}
+
+/* ── EDUCATION ── */
+.edu{
+  display:grid;grid-template-columns:1fr auto;gap:.5rem 1.5rem;
+  padding:1.5rem 0;border-top:1px solid var(--border);
+}
+.edu:last-child{border-bottom:1px solid var(--border)}
+.edu-degree{font-size:1rem;font-weight:500;margin-bottom:.2rem}
+.edu-school{font-size:14px;color:var(--subtle)}
+
+/* ── STATS ROW ── */
+.stats{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:1px;background:var(--border);
+  border:1px solid var(--border);border-radius:6px;overflow:hidden;
+  margin-bottom:3rem;
+}
+.stat{
+  background:var(--surface);padding:1.25rem 1rem;text-align:center;
+}
+.stat-n{
+  font-family:'Lora',serif;font-size:2rem;font-weight:600;
+  color:var(--accent);line-height:1;display:block;margin-bottom:.3rem;
+}
+.stat-l{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+
+/* ── SKILLS ── */
+.skills-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;
+}
+.skill-item{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:4px;padding:.6rem .9rem;
+  font-family:'Geist Mono',monospace;font-size:12px;color:var(--subtle);
+  transition:border-color .2s,color .2s;
+}
+.skill-item:hover{border-color:var(--accent-dim);color:var(--accent)}
+
+/* ── CERTS ── */
+.certs{display:flex;gap:10px;flex-wrap:wrap;margin-top:.75rem}
+.cert{
+  display:flex;align-items:center;gap:7px;
+  background:#1a1600;border:1px solid #3d3200;border-radius:4px;
+  padding:6px 12px;font-size:12.5px;color:#c9a84c;
+  font-family:'Geist Mono',monospace;
+}
+
+/* ── CTA ── */
+.cta-block{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:8px;padding:2.5rem 3rem;
+  display:flex;align-items:center;justify-content:space-between;gap:2rem;
+  margin-top:4rem;
+}
+.cta-block h3{
+  font-family:'Lora',serif;font-size:1.5rem;font-weight:600;
+  margin-bottom:.4rem;letter-spacing:-.01em;
+}
+.cta-block h3 em{font-style:italic;font-weight:400;color:var(--accent)}
+.cta-block p{font-size:14px;color:var(--muted);max-width:360px}
+.cta-btn{
+  display:inline-block;padding:11px 26px;
+  background:var(--accent);color:#0c0c0c;
+  text-decoration:none;border-radius:4px;
+  font-size:13px;font-weight:500;letter-spacing:.04em;
+  white-space:nowrap;transition:opacity .2s;flex-shrink:0;
+}
+.cta-btn:hover{opacity:.85}
+
+/* ── FOOTER ── */
+footer{
+  border-top:1px solid var(--border);
+  padding:2rem 3rem;margin-top:4rem;
+  display:flex;align-items:center;justify-content:space-between;
+  font-size:13px;color:var(--muted);
+}
+.footer-name{font-family:'Lora',serif;font-weight:600;color:var(--subtle)}
+.footer-links{display:flex;gap:1.5rem}
+.footer-links a{color:var(--muted);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:var(--text)}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease}
+.revealed{opacity:1;transform:none}
+
+@media(max-width:640px){
+  header{padding:0 1.25rem}
+  .page{padding:100px 1.25rem 5rem}
+  .job-header{grid-template-columns:1fr}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .cta-block{flex-direction:column;padding:1.75rem}
+  footer{flex-direction:column;gap:1rem;text-align:center;padding:1.5rem}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="#">VJ.</a>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#experience" class="active">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<div class="page">
+
+  <!-- HERO -->
+  <section id="about">
+    <p class="eyebrow reveal">Professional Background</p>
+    <h1 class="hero-heading reveal">Work &nbsp;<em>Experience</em></h1>
+    <p class="hero-sub reveal">Four-plus years building workflow automation and citizen-facing digital services on the Appian BPM platform — from government portals in the Middle East to enterprise healthcare systems.</p>
+
+    <div class="stats reveal">
+      <div class="stat"><span class="stat-n">4.4</span><span class="stat-l">Years Exp.</span></div>
+      <div class="stat"><span class="stat-n">5+</span><span class="stat-l">Projects</span></div>
+      <div class="stat"><span class="stat-n">89</span><span class="stat-l">Services Built</span></div>
+      <div class="stat"><span class="stat-n">L2</span><span class="stat-l">Appian Cert.</span></div>
+    </div>
+  </section>
+
+  <hr class="rule"/>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <p class="section-title reveal">Career <em>History</em></p>
+
+    <div class="job reveal">
+      <div class="job-header">
+        <div class="job-role">Senior Appian Developer</div>
+        <div class="job-period">2021 — Present</div>
+      </div>
+      <div class="job-company">Xebia | Appcino &nbsp;·&nbsp; Jaipur, India (+ Onsite Middle East)</div>
+      <p class="job-desc">Lead developer across multiple high-impact Appian implementations spanning government, healthcare, and enterprise domains. Worked directly with Middle East client stakeholders onsite to gather requirements and deliver citizen-facing digital services.</p>
+      <ul class="job-bullets">
+        <li>Designed and implemented complex workflows and reusable SAIL interfaces aligned with business requirements.</li>
+        <li>Integrated Appian applications with external systems through secure and scalable Web APIs.</li>
+        <li>Worked onsite with Middle East clients to gather requirements and implement solutions for citizen-facing digital services.</li>
+        <li>Ensured application quality by following Appian best practices in architecture, security, and performance optimization.</li>
+      </ul>
+      <div class="tags">
+        <span class="tag">Appian BPM</span>
+        <span class="tag">SAIL</span>
+        <span class="tag">Process Models</span>
+        <span class="tag">Web APIs</span>
+        <span class="tag">MySQL</span>
+        <span class="tag">Oracle</span>
+        <span class="tag">RBAC</span>
+        <span class="tag">Record Types</span>
+      </div>
+    </div>
+
+    <!-- Education inline like the reference -->
+    <hr class="rule"/>
+    <p class="section-title reveal">Education</p>
+
+    <div class="edu reveal">
+      <div>
+        <div class="edu-degree">Bachelor of Computer Application</div>
+        <div class="edu-school">JECRC University, Jaipur</div>
+        <div class="tags" style="margin-top:.6rem">
+          <span class="tag">Software Engineering</span>
+          <span class="tag">Database Systems</span>
+          <span class="tag">Web Development</span>
+          <span class="tag">Algorithms</span>
+        </div>
+      </div>
+      <div class="job-period" style="padding-top:2px">2019 — 2022</div>
+    </div>
+
+    <div style="margin-top:1.5rem" class="reveal">
+      <p class="eyebrow" style="margin-bottom:.75rem">Certifications</p>
+      <div class="certs">
+        <span class="cert">🏅 Appian Level 1 Certified</span>
+        <span class="cert">🏅 Appian Level 2 Certified</span>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule"/>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <p class="section-title reveal">Selected <em>Projects</em></p>
+
+    <!-- Project 1 -->
+    <div class="job reveal">
+      <span class="pill pill-ent">Enterprise</span>
+      <div class="job-header">
+        <div class="job-role">Enterprise Workflow &amp; Reporting Platform</div>
+        <div class="job-period">Jan 2026 — Present</div>
+      </div>
+      <div class="job-company">Confidential Client</div>
+      <p class="job-desc">Developed and enhanced enterprise applications using the Appian low-code platform to support workflow automation and efficient data management.</p>
+      <ul class="job-bullets">
+        <li>Designed SAIL interfaces, process models, and record types to streamline business processes and improve user experience.</li>
+        <li>Implemented dynamic reporting and data visualization features to enable efficient data analysis and informed decision-making.</li>
+        <li>Developed and maintained audit trail mechanisms using database triggers to track user activities and data changes.</li>
+      </ul>
+      <div class="tags">
+        <span class="tag">SAIL</span><span class="tag">Process Models</span><span class="tag">Record Types</span><span class="tag">DB Triggers</span><span class="tag">Data Visualization</span><span class="tag">Audit Trails</span>
+      </div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="job reveal">
+      <span class="pill pill-med">Healthcare</span>
+      <div class="job-header">
+        <div class="job-role">Medical Affairs &amp; Drug Management Platform</div>
+        <div class="job-period">Jul — Dec 2025</div>
+      </div>
+      <div class="job-company">Confidential Healthcare Client</div>
+      <p class="job-desc">Designed and implemented an Appian-based solution to manage drug approvals, medical affairs workflows, and regulatory submissions.</p>
+      <ul class="job-bullets">
+        <li>Built end-to-end automation for request intake, medical review, compliance checks, and multi-level approvals.</li>
+        <li>Integrated with external healthcare systems to ensure accurate drug data validation and better decision-making.</li>
+        <li>Enhanced transparency and compliance through audit trails, RBAC, and real-time reporting dashboards.</li>
+      </ul>
+      <div class="tags">
+        <span class="tag">Healthcare APIs</span><span class="tag">Compliance</span><span class="tag">RBAC</span><span class="tag">Multi-level Approvals</span><span class="tag">Dashboards</span>
+      </div>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="job reveal">
+      <span class="pill pill-gov">Government · Onsite</span>
+      <div class="job-header">
+        <div class="job-role">E-Services Portal — Middle East</div>
+        <div class="job-period">Oct 2023 — Jun 2025</div>
+      </div>
+      <div class="job-company">Government Client, Middle East (On Client Location)</div>
+      <p class="job-desc">Built and maintained a citizen-facing portal offering services in tourism, entertainment, scholarships, and social development.</p>
+      <ul class="job-bullets">
+        <li>Designed reusable SAIL interfaces and implemented secure Web API integrations.</li>
+        <li>Worked directly with Middle East stakeholders to gather requirements and provide ongoing application support.</li>
+        <li>Supported regional development goals by streamlining public service delivery.</li>
+      </ul>
+      <div class="tags">
+        <span class="tag">Citizen Services</span><span class="tag">SAIL</span><span class="tag">Web APIs</span><span class="tag">Onsite Delivery</span>
+      </div>
+    </div>
+
+    <!-- Project 4 -->
+    <div class="job reveal">
+      <span class="pill pill-gov">Government</span>
+      <div class="job-header">
+        <div class="job-role">Government Licensing Platform — Saudi Arabia</div>
+        <div class="job-period">Apr 2022 — Sep 2023</div>
+      </div>
+      <div class="job-company">Government Client, Saudi Arabia</div>
+      <p class="job-desc">Developed a licensing solution for social workers, covering slot booking, exams, and virtual interviews.</p>
+      <ul class="job-bullets">
+        <li>Optimized performance and user experience through modular rule design and automation.</li>
+        <li>Reduced manual processes with automated approval chains and workflow logic.</li>
+      </ul>
+      <div class="tags">
+        <span class="tag">Slot Booking</span><span class="tag">Exam Workflows</span><span class="tag">Automation</span><span class="tag">Performance Optimization</span>
+      </div>
+    </div>
+
+    <!-- Project 5 -->
+    <div class="job reveal">
+      <span class="pill pill-gov">Government</span>
+      <div class="job-header">
+        <div class="job-role">Government Social Services Digitization</div>
+        <div class="job-period">Jul 2022 — Apr 2023</div>
+      </div>
+      <div class="job-company">Government Client — 89 Services</div>
+      <p class="job-desc">Digitized 89 social and welfare services within a strict 9-month timeline, integrating Appian with a React frontend and third-party platforms.</p>
+      <ul class="job-bullets">
+        <li>Integrated Appian with a React frontend and third-party platforms for streamlined access.</li>
+        <li>Enhanced auditability and process transparency with custom reporting and RBAC.</li>
+      </ul>
+      <div class="tags">
+        <span class="tag">89 Services</span><span class="tag">React Integration</span><span class="tag">Third-party APIs</span><span class="tag">RBAC</span><span class="tag">Custom Reporting</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-block reveal" id="contact">
+    <div>
+      <h3>Want to work <em>together?</em></h3>
+      <p>Currently open to senior Appian development opportunities and challenging BPM automation roles.</p>
+    </div>
+    <a class="cta-btn" href="mailto:vishnujangid256@gmail.com">Get In Touch</a>
+  </div>
+
+</div>
+
+<footer>
+  <span class="footer-name">Vishnu Jangid.</span>
+  <span style="color:var(--muted);font-size:12px">© 2025 — Senior Appian Developer</span>
+  <div class="footer-links">
+    <a href="mailto:vishnujangid256@gmail.com">Email</a>
+    <a href="tel:+917357576924">Phone</a>
+    <a href="#">LinkedIn</a>
+  </div>
+</footer>
+
+<script>
+const io = new IntersectionObserver(entries => {
+  entries.forEach((e,i) => {
+    if(e.isIntersecting){
+      setTimeout(()=>e.target.classList.add('revealed'), i*60);
+      io.unobserve(e.target);
+    }
+  });
+},{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
